@@ -1,0 +1,12 @@
+.emiComponent {
+  border: 1px solid #d6d3d3;
+  border-radius: 12px;
+  background: #f8f8fbe1;
+  width: 100%;
+  min-width: fit-content;
+  height: fit-content;
+}
+
+.emiComponentSelected {
+  border: 1px solid #0e0778;
+}

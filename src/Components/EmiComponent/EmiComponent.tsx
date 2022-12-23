@@ -1,7 +1,7 @@
-import { Divider } from "./StyledComponents";
-import { BreakDown } from "./BreakDown";
 import "./EMIComponent.css";
-import { EmiPlanElement } from "./types";
+import { EmiPlanElement } from "../types";
+import { BreakDown } from "../BreakDown";
+import { Divider } from "../StyledComponents";
 
 export interface EMIComponentProps {
   isSelected?: boolean;

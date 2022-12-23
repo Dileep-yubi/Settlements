@@ -1,6 +1,6 @@
-import "./EMIComponent.css";
-import { EMIComponent } from "./EmiComponent";
-import { Money } from "./Money";
+import "./EmiPlanComponent.css";
+import { EMIComponent } from "../EmiComponent/EmiComponent";
+import { Money } from "../Money";
 
 interface EMIPlanComponentProps {
   selected: number;
@@ -17,7 +17,14 @@ export const EMIPlanComponent = (props: EMIPlanComponentProps) => {
             p.a
           </span>
         ),
-        value: <input type="radio" name="emi" />,
+        value: (
+          <input
+            onChange={() => {}}
+            checked={props.selected === 1}
+            type="radio"
+            name="emi"
+          />
+        ),
       },
       children: [
         {
@@ -42,7 +49,14 @@ export const EMIPlanComponent = (props: EMIPlanComponentProps) => {
             @1.5% p.a
           </span>
         ),
-        value: <input type="radio" name="emi" />,
+        value: (
+          <input
+            onChange={() => {}}
+            checked={props.selected === 2}
+            type="radio"
+            name="emi"
+          />
+        ),
       },
       children: [
         {
@@ -67,7 +81,14 @@ export const EMIPlanComponent = (props: EMIPlanComponentProps) => {
             p.a
           </span>
         ),
-        value: <input type="radio" name="emi" />,
+        value: (
+          <input
+            onChange={() => {}}
+            checked={props.selected === 3}
+            type="radio"
+            name="emi"
+          />
+        ),
       },
       children: [
         {

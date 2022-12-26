@@ -1,35 +1,32 @@
 import React from "react";
 import styled from "styled-components";
+import { Payment } from "./types";
+
 export type FlexDivProps = {
   flexDirection: string;
   justifyContent: string;
   alignItems: string;
 };
-export const FlexDiv = styled.div<FlexDivProps>`
+export const FlexDiv = styled.div`
   width: 100%;
   display: flex;
-  flex-direction: ${(props: any) => props.flexDirection || "row"};
-  justify-content: ${(props: any) => props.justifyContent || "space-between"};
-  align-items: ${(props: any) => props.alignItems || "center"};
+  flex-direction: "row";
+  justify-content: "space-between";
+  align-items: "center";
   gap: 5px;
   line-height: 26px;
   padding: 15px;
 `;
 
-export type SummaryProps = {
-  title: string;
-  value: string;
-};
-const Summary: React.FC<SummaryProps> = ({ title, value }: SummaryProps) => {
-  console.log({ title, value });
+const Summary: React.FC<Payment> = ({
+  title,
+  value,
+  currency,
+}: Payment) => {
   return (
-    <FlexDiv
-      flexDirection="row"
-      justifyContent="space-between"
-      alignItems="center"
-    >
+    <FlexDiv>
       <span>{title}</span>
-      <span>{value}</span>
+      <span>{`${currency + " " || ""} ${value}`}</span>
     </FlexDiv>
   );
 };

@@ -5,6 +5,8 @@ import { Reducer } from "redux";
 export const initialState: TodoInitialState = {
   todoList: [],
   bankName: "SMARTBank",
+  isLoading: false,
+  payments: [],
 };
 
 export const todoState: Reducer<TodoInitialState, TodoActions> = produce(
@@ -12,7 +14,20 @@ export const todoState: Reducer<TodoInitialState, TodoActions> = produce(
     console.log("todoState");
     switch (action.type) {
       case TodoActionTypes.AddTodo: {
-        draftState.todoList.push(action.payload.todo);
+        console.log("AddTodo reducer");
+        draftState.isLoading = true;
+        break;
+      }
+
+      case TodoActionTypes.AddTodoSuccess: {
+        console.log("AddTodoSuccess reducer");
+        draftState.isLoading = false;
+        draftState.payments = action.payload.payments;
+        break;
+      }
+      case TodoActionTypes.AddTodoFailure: {
+        draftState.isLoading = false;
+        break;
       }
     }
   },

@@ -1,8 +1,8 @@
 import { addTodoAction } from "../../store/todo/action";
 
 export type StateProps = {
-  todoList: string[];
   bankName: string;
+  isLoading: boolean;
 };
 
 export type DispatchProps = {

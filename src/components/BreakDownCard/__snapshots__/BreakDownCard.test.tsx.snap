@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BreakDownCard snapshot 1`] = `
+<div>
+  <div
+    class="emiComponent emiComponentSelected"
+  >
+    <div
+      style="padding: 15px 15px 0px 15px; gap: 3em;"
+    >
+      <div
+        style="font-size: 14px; font-weight: normal;"
+      >
+        <div
+          class="sc-bcXHqe rRVsh"
+        >
+          <span>
+            Tenure
+          </span>
+          <span>
+            undefined  9 months
+          </span>
+        </div>
+      </div>
+      <div
+        style="font-size: 14px; font-weight: normal;"
+      >
+        <div
+          class="sc-gswNZR bUnCSh"
+          data-testid="divider"
+        />
+        <div
+          class="sc-bcXHqe rRVsh"
+        >
+          <span>
+            EMI
+          </span>
+          <span>
+            USD  3339
+          </span>
+        </div>
+      </div>
+      <div
+        style="font-size: 14px; font-weight: normal;"
+      >
+        <div
+          class="sc-gswNZR bUnCSh"
+          data-testid="divider"
+        />
+        <div
+          class="sc-bcXHqe rRVsh"
+        >
+          <span>
+            R.O.I
+          </span>
+          <span>
+            undefined  1%
+          </span>
+        </div>
+      </div>
+      <div
+        style="font-size: 14px; font-weight: normal;"
+      >
+        <div
+          class="sc-gswNZR bUnCSh"
+          data-testid="divider"
+        />
+        <div
+          class="sc-bcXHqe rRVsh"
+        >
+          <span>
+            Interest
+          </span>
+          <span>
+            USD  150
+          </span>
+        </div>
+      </div>
+      <div
+        style="font-size: 14px; font-weight: normal;"
+      >
+        <div
+          class="sc-gswNZR bUnCSh"
+          data-testid="divider"
+        />
+        <div
+          class="sc-bcXHqe rRVsh"
+        >
+          <span>
+            Total amount payable
+          </span>
+          <span>
+            USD  1000
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+</div>
+`;

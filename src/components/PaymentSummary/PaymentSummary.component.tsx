@@ -1,34 +1,45 @@
-import { useEffect } from "react";
-import { BreakDownCard } from "../BreakDownCard/BreakDownCard.component";
+import { useEffect, useState } from "react";
+import BreakDownCard from "../BreakDownCard";
+import { Spin } from "antd";
+import CAButton from "@yubi/yb-core-button";
+import { useStyles } from "@yubi/yb-style-provider";
+
 import {
-  BackButton,
   BankTitle,
-  Card,
   Container,
   EMITitle,
   PaymentDetailCard,
   ReviewTitle,
   Revised,
-  SubmitButton,
   Title,
   TitleContainer,
 } from "./PaymentSummary.styled";
 import { PaymentSummaryProps } from "./types";
+import { Modal } from "antd";
+import { CONVERT_OUTSTANDING, REVISED_EMI } from "../constants/displayMessages";
 
 export const PaymentSummary: React.FC<PaymentSummaryProps> = ({
-  todoList,
   addTodoAction,
   bankName,
+  isLoading,
 }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const credit = {
     width: "80%",
   };
-  console.log(todoList);
+  const { styleConnector } = useStyles();
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
   useEffect(() => {
-    addTodoAction("read");
+    addTodoAction();
   }, [addTodoAction]);
 
-  const x = [{}];
+  if (isLoading) {
+    return <Spin />;
+  }
+
   return (
     <Container>
       <TitleContainer>
@@ -40,9 +51,7 @@ export const PaymentSummary: React.FC<PaymentSummaryProps> = ({
           <div
             style={{ width: "50%", display: "flex", alignItems: "flex-start" }}
           >
-            <EMITitle>
-              convert your outstanding amount into EMIs with ease!
-            </EMITitle>
+            <EMITitle>{CONVERT_OUTSTANDING}</EMITitle>
           </div>
         </div>
       </TitleContainer>
@@ -52,7 +61,7 @@ export const PaymentSummary: React.FC<PaymentSummaryProps> = ({
         <ReviewTitle> Please review the selection made</ReviewTitle>
 
         <BreakDownCard />
-        <Revised> View the revised EMI payment plan letter</Revised>
+        <Revised onClick={toggleModal}>{REVISED_EMI}</Revised>
         <div
           style={{
             width: "100%",
@@ -60,10 +69,47 @@ export const PaymentSummary: React.FC<PaymentSummaryProps> = ({
             justifyContent: "space-between",
           }}
         >
-          <BackButton> Back</BackButton>
-          <SubmitButton> Submit</SubmitButton>
+          <CAButton
+            title="Back"
+            size={"s"}
+            type={"success"}
+            styleConnector={styleConnector}
+            width="35%"
+            onClick={toggleModal}
+          />
+          <CAButton
+            title="Submit"
+            size={"s"}
+            type={"success"}
+            styleConnector={styleConnector}
+            width="35%"
+            onClick={toggleModal}
+          />
         </div>
       </PaymentDetailCard>
+      <Modal
+        title={bankName}
+        open={isModalOpen}
+        onOk={toggleModal}
+        onCancel={toggleModal}
+      >
+        <Title>Balance to API application</Title>
+
+        <PaymentDetailCard>
+          <Title>Summary</Title>
+          <ReviewTitle> Please review the selection made</ReviewTitle>
+
+          <BreakDownCard />
+
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "space-between",
+            }}
+          ></div>
+        </PaymentDetailCard>
+      </Modal>
     </Container>
   );
 };

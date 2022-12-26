@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BreakDown snapshot 1`] = `
+<div>
+  <div
+    style="font-size: 14px; font-weight: normal;"
+  >
+    <div
+      class="sc-gswNZR pwObR"
+    >
+      <span>
+        EMI
+      </span>
+      <span>
+        USD  100
+      </span>
+    </div>
+  </div>
+  <div
+    style="font-size: 14px; font-weight: normal;"
+  >
+    <div
+      class="sc-bcXHqe iXsvJl"
+      data-testid="divider"
+    />
+    <div
+      class="sc-gswNZR pwObR"
+    >
+      <span>
+        Interest
+      </span>
+      <span>
+        USD  1
+      </span>
+    </div>
+  </div>
+</div>
+`;

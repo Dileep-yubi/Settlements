@@ -5,12 +5,16 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { store } from "./store";
 import { Provider } from "react-redux";
+import StyleProvider from "@yubi/yb-style-provider";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
 root.render(
   <Provider store={store}>
-    <App />
+    <StyleProvider baseUrl={""}>
+      <App />
+    </StyleProvider>
   </Provider>
 );
 

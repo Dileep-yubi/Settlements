@@ -1,5 +1,5 @@
-import { watchTodo } from "../settlements/sagas";
+import { watchSettlements } from "../settlements/sagas";
 
 export function* rootSaga(): Generator {
-  yield watchTodo;
+  yield watchSettlements;
 }

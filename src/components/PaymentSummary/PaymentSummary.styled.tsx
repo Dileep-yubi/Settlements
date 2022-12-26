@@ -1,13 +1,8 @@
 import styled from "styled-components";
 export const Container = styled.div`
-  width: 400px;
+  width: 100%;
   margin: auto;
-  @media (max-width: 480px) {
-    width: 100%;
-  }
-  background-color: #0d4a85;
-  background: linear-gradient(168.09deg, #7003e4 0%, #0d4a85 30.4%);
-  height: 100vh;
+  height: 100%;
 `;
 
 export const TitleContainer = styled.div`

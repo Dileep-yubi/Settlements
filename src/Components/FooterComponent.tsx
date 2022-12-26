@@ -4,23 +4,27 @@ import { FlexDiv, Footer, StyledButton } from "./StyledComponents";
 interface FooterComponentProps {
   isBackDisabled?: boolean;
   isNextDisabled?: boolean;
-  onNext: () => void;
-  onPrev: () => void;
+  onNext?: () => void;
+  onPrev?: () => void;
 }
 
-export const FooterComponent = (props: FooterComponentProps) => {
+export const FooterComponent = ({
+  onPrev,
+  isBackDisabled,
+  onNext,
+  isNextDisabled,
+}: FooterComponentProps) => {
   return (
     <Footer>
       <FlexDiv>
-        <StyledButton
-          onClick={() => props.onPrev()}
-          disabled={props.isBackDisabled}>
+        <StyledButton onClick={() => onPrev?.()} disabled={isBackDisabled}>
           Not Now
         </StyledButton>
         <StyledButton
-          onClick={() => props.onNext()}
+          onClick={() => onNext?.()}
           primary
-          disabled={props.isNextDisabled}>
+          disabled={isNextDisabled}
+        >
           Submit
         </StyledButton>
       </FlexDiv>

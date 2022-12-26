@@ -5,9 +5,9 @@
 }
 @import url("https://fonts.googleapis.com/css?family=Inter");
 .rootContainer {
-  background: #7a2ed6;
   height: 100%;
   color: #fff;
   display: flex;
   flex-direction: column;
+  background: linear-gradient(168.09deg, #a067f4 0%, #7003e4 30.4%);
 }

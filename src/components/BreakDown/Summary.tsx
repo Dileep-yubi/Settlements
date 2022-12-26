@@ -16,17 +16,14 @@ export const FlexDiv = styled.div`
   gap: 5px;
   line-height: 26px;
   padding: 15px;
+  color: black;
 `;
 
-const Summary: React.FC<Payment> = ({
-  title,
-  value,
-  currency,
-}: Payment) => {
+const Summary: React.FC<Payment> = ({ title, value, currency }: Payment) => {
   return (
     <FlexDiv>
       <span>{title}</span>
-      <span>{`${currency + " " || ""} ${value}`}</span>
+      <span>{`${currency || ""} ${value}`}</span>
     </FlexDiv>
   );
 };

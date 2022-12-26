@@ -115,7 +115,8 @@ export const EMIPlanComponent = (props: EMIPlanComponentProps) => {
           <div
             key={index}
             className="emiPlanWrapper"
-            onChange={() => props.handleSelected(index)}>
+            onClick={() => props.handleSelected(index)}
+          >
             <EMIComponent isRadio={true} isSelected={isSelected} element={e} />
           </div>
         );

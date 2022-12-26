@@ -7,7 +7,7 @@ const mapStateToProps = ({ todoState }: AppState): StateProps => ({
   payments: todoState.payments,
 });
 
-export default connect<StateProps, any, any, any>(
+export default connect<StateProps, null, {}, any>(
   mapStateToProps,
-  {}
+  null
 )(BreakDownCard);

@@ -16,7 +16,11 @@ import {
 } from "./PaymentSummary.styled";
 import { PaymentSummaryProps } from "./types";
 import { Modal } from "antd";
-import { CONVERT_OUTSTANDING, REVISED_EMI } from "../constants/displayMessages";
+import {
+  CONVERT_OUTSTANDING,
+  EMI_BALANCE_APPLICATION,
+  REVISED_EMI,
+} from "../constants/displayMessages";
 
 export const PaymentSummary: React.FC<PaymentSummaryProps> = ({
   getPaymentsAction,
@@ -42,7 +46,7 @@ export const PaymentSummary: React.FC<PaymentSummaryProps> = ({
 
   return (
     <Container>
-      <TitleContainer>
+      {/* <TitleContainer>
         <BankTitle>{bankName}</BankTitle>
         <div style={{ width: "100%", display: "flex" }}>
           <div style={{ width: "50%" }}>
@@ -54,7 +58,7 @@ export const PaymentSummary: React.FC<PaymentSummaryProps> = ({
             <EMITitle>{CONVERT_OUTSTANDING}</EMITitle>
           </div>
         </div>
-      </TitleContainer>
+      </TitleContainer> */}
 
       <PaymentDetailCard>
         <Title>Summary</Title>
@@ -62,7 +66,7 @@ export const PaymentSummary: React.FC<PaymentSummaryProps> = ({
 
         <BreakDownCard />
         <Revised onClick={toggleModal}>{REVISED_EMI}</Revised>
-        <div
+        {/* <div
           style={{
             width: "100%",
             display: "flex",
@@ -85,7 +89,7 @@ export const PaymentSummary: React.FC<PaymentSummaryProps> = ({
             width="35%"
             onClick={toggleModal}
           />
-        </div>
+        </div> */}
       </PaymentDetailCard>
       <Modal
         title={bankName}
@@ -93,22 +97,7 @@ export const PaymentSummary: React.FC<PaymentSummaryProps> = ({
         onOk={toggleModal}
         onCancel={toggleModal}
       >
-        <Title>Balance to API application</Title>
-
-        <PaymentDetailCard>
-          <Title>Summary</Title>
-          <ReviewTitle> Please review the selection made</ReviewTitle>
-
-          <BreakDownCard />
-
-          <div
-            style={{
-              width: "100%",
-              display: "flex",
-              justifyContent: "space-between",
-            }}
-          ></div>
-        </PaymentDetailCard>
+        <Title>{EMI_BALANCE_APPLICATION}</Title>
       </Modal>
     </Container>
   );

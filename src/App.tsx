@@ -1,3 +1,5 @@
+import PaymentSummary from "components/PaymentSummary";
+import GlobalStyle from "GlobalStyles";
 import React, { useState } from "react";
 import "./App.css";
 import { EmiListComponent } from "./components/EmiListComponent/EmiListComponent";
@@ -17,10 +19,14 @@ const App = () => {
         />
       ),
     },
+    {
+      component: <PaymentSummary />,
+    },
   ];
 
   return (
     <div className="rootContainer">
+      <GlobalStyle />
       <Header />
       {steps.map(
         (step, index) =>
@@ -31,8 +37,8 @@ const App = () => {
       <FooterComponent
         onNext={() => setCurrentStep((prev: number) => prev + 1)}
         onPrev={() => setCurrentStep((prev: number) => prev - 1)}
-        isNextDisabled={!selected || currentStep === steps.length - 1}
-        isBackDisabled={!currentStep || false}
+        isNextDisabled={!selected}
+        isBackDisabled={!currentStep}
       />
     </div>
   );

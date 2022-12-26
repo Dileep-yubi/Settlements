@@ -16,7 +16,7 @@ export const EmiListComponent = (props: EmiListComponentProps) => {
     if (selected) {
       props.handleSelected(selected);
     }
-  }, [selected]);
+  }, [props, selected]);
 
   const value = (
     <span style={{ fontWeight: "bolder" }}>

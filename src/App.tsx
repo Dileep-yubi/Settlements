@@ -1,15 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
-import PaymentSummary from "./components/PaymentSummary";
-import GlobalStyle from "./GlobalStyles";
+import { EmiListComponent } from "./components/EmiListComponent/EmiListComponent";
+import { FooterComponent } from "./components/FooterComponent";
+import { Header } from "./components/Header/Header";
 
-function App() {
+const App = () => {
+  const [selected, setSelected] = useState<number>(0);
+  const [currentStep, setCurrentStep] = useState<number>(0);
+
+  const steps = [
+    {
+      component: (
+        <EmiListComponent
+          selectedEmi={selected}
+          handleSelected={(index) => setSelected(index)}
+        />
+      ),
+    },
+  ];
+
   return (
-    <div className="App">
-      <GlobalStyle />
-      <PaymentSummary />
+    <div className="rootContainer">
+      <Header />
+      {steps.map(
+        (step, index) =>
+          index === currentStep && (
+            <React.Fragment key={index}>{step.component}</React.Fragment>
+          )
+      )}
+      <FooterComponent
+        onNext={() => setCurrentStep((prev: number) => prev + 1)}
+        onPrev={() => setCurrentStep((prev: number) => prev - 1)}
+        isNextDisabled={!selected || currentStep === steps.length - 1}
+        isBackDisabled={!currentStep || false}
+      />
     </div>
   );
-}
+};
 
 export default App;

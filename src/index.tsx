@@ -6,14 +6,16 @@ import reportWebVitals from "./reportWebVitals";
 import { store } from "./store";
 import { Provider } from "react-redux";
 import StyleProvider from "@yubi/yb-style-provider";
+import { IntlProvider } from "react-intl";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
-
 root.render(
   <Provider store={store}>
     <StyleProvider baseUrl={""}>
-      <App />
+      <IntlProvider locale="en">
+        <App />
+      </IntlProvider>
     </StyleProvider>
   </Provider>
 );

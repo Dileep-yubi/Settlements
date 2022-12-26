@@ -3,3 +3,11 @@
   height: 100%;
   width: 100%;
 }
+@import url("https://fonts.googleapis.com/css?family=Inter");
+.rootContainer {
+  background: #7a2ed6;
+  height: 100%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}

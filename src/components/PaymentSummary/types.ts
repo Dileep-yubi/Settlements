@@ -1,4 +1,4 @@
-import { getPaymentsAction } from "../../store/todo/action";
+import { getPaymentsAction } from "../../store/settlements/action";
 
 export type StateProps = {
   bankName: string;

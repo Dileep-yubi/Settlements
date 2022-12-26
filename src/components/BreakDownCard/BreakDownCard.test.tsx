@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
-import { payments } from "../../store/todo/__test__/testData";
+import { payments } from "../../store/settlements/__test__/testData";
 import BreakDownCard from "./";
 import reduxMockStore from "redux-mock-store";
 

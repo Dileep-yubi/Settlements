@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import { todoState } from "../todo/reducer";
+import { todoState } from "../settlements/reducer";
 
 const rootReducer = combineReducers({
   todoState,

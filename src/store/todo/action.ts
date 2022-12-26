@@ -1,30 +1,28 @@
 import { Payment } from "../../components/BreakDown/types";
 import {
-  AddTodoAction,
-  AddTodoActionFailure,
-  AddTodoActionSuccess,
-  TodoActionTypes,
+  GetPaymentsAction,
+  GetPaymentsFailureAction,
+  GetPaymentsSuccessAction,
+  SettlementsActionTypes,
 } from "./types";
 
-export const addTodoAction = (): AddTodoAction => {
-  console.log("addTodoAction");
+export const getPaymentsAction = (): GetPaymentsAction => {
   return {
-    type: TodoActionTypes.AddTodo,
+    type: SettlementsActionTypes.GetPayments,
   };
 };
 
-export const addTodoSuccessAction = (
+export const getPaymentsSuccessAction = (
   payments: Array<Payment>
-): AddTodoActionSuccess => {
-  console.log("addTodoSuccessAction");
+): GetPaymentsSuccessAction => {
   return {
-    type: TodoActionTypes.AddTodoSuccess,
+    type: SettlementsActionTypes.GetPaymentsSuccess,
     payload: { payments },
   };
 };
 
-export const addTodoFailureAction = (): AddTodoActionFailure => {
+export const getPaymentsFailureAction = (): GetPaymentsFailureAction => {
   return {
-    type: TodoActionTypes.AddTodoFailure,
+    type: SettlementsActionTypes.GetPaymentsFailure,
   };
 };

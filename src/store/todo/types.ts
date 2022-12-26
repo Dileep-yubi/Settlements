@@ -1,33 +1,29 @@
 import { Payment } from "../../components/BreakDown/types";
 
-export enum TodoActionTypes {
-  AddTodo = "@@todo/ADD_TODO",
-  AddTodoSuccess = "@@todo/ADD_TODO_SUCCESS",
-  AddTodoFailure = "@@todo/ADD_TODO_FAILURE",
+export enum SettlementsActionTypes {
+  GetPayments = "@@settlements/GET_PAYMENTS",
+  GetPaymentsSuccess = "@@settlements/GET_PAYMENTS_SUCCESS",
+  GetPaymentsFailure = "@@settlements/GET_PAYMENTS_FAILURE",
 }
 
-export type TodoInitialState = {
-  todoList: string[];
+export type SettlementsInitialState = {
   bankName: string;
   isLoading: boolean;
   payments: Array<Payment>;
 };
-export type AddTodoPayload = {
-  todo: string;
-};
-export type AddTodoAction = {
-  type: typeof TodoActionTypes.AddTodo;
+export type GetPaymentsAction = {
+  type: typeof SettlementsActionTypes.GetPayments;
 };
 
-export type AddTodoActionSuccess = {
-  type: typeof TodoActionTypes.AddTodoSuccess;
+export type GetPaymentsSuccessAction = {
+  type: typeof SettlementsActionTypes.GetPaymentsSuccess;
   payload: { payments: Array<Payment> };
 };
 
-export type AddTodoActionFailure = {
-  type: typeof TodoActionTypes.AddTodoFailure;
+export type GetPaymentsFailureAction = {
+  type: typeof SettlementsActionTypes.GetPaymentsFailure;
 };
-export type TodoActions =
-  | AddTodoAction
-  | AddTodoActionSuccess
-  | AddTodoActionFailure;
+export type SettlementsActions =
+  | GetPaymentsAction
+  | GetPaymentsSuccessAction
+  | GetPaymentsFailureAction;

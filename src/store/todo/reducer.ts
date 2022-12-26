@@ -1,35 +1,42 @@
-import { TodoActions, TodoActionTypes, TodoInitialState } from "./types";
+import {
+  SettlementsActions,
+  SettlementsActionTypes,
+  SettlementsInitialState,
+} from "./types";
 import produce, { Draft } from "immer";
 import { Reducer } from "redux";
 
-export const initialState: TodoInitialState = {
-  todoList: [],
+export const initialState: SettlementsInitialState = {
   bankName: "SMARTBank",
   isLoading: false,
   payments: [],
 };
 
-export const todoState: Reducer<TodoInitialState, TodoActions> = produce(
-  (draftState: Draft<TodoInitialState>, action: TodoActions) => {
-    console.log("todoState");
-    switch (action.type) {
-      case TodoActionTypes.AddTodo: {
-        console.log("AddTodo reducer");
-        draftState.isLoading = true;
-        break;
-      }
+export const todoState: Reducer<SettlementsInitialState, SettlementsActions> =
+  produce(
+    (
+      draftState: Draft<SettlementsInitialState>,
+      action: SettlementsActions
+    ) => {
+      console.log("todoState");
+      switch (action.type) {
+        case SettlementsActionTypes.GetPayments: {
+          console.log("AddTodo reducer");
+          draftState.isLoading = true;
+          break;
+        }
 
-      case TodoActionTypes.AddTodoSuccess: {
-        console.log("AddTodoSuccess reducer");
-        draftState.isLoading = false;
-        draftState.payments = action.payload.payments;
-        break;
+        case SettlementsActionTypes.GetPaymentsSuccess: {
+          console.log("AddTodoSuccess reducer");
+          draftState.isLoading = false;
+          draftState.payments = action.payload.payments;
+          break;
+        }
+        case SettlementsActionTypes.GetPaymentsFailure: {
+          draftState.isLoading = false;
+          break;
+        }
       }
-      case TodoActionTypes.AddTodoFailure: {
-        draftState.isLoading = false;
-        break;
-      }
-    }
-  },
-  initialState
-);
+    },
+    initialState
+  );

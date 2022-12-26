@@ -1,18 +1,19 @@
 import { put, takeEvery } from "redux-saga/effects";
 import { Payment } from "../../components/BreakDown/types";
-import { addTodoFailureAction, addTodoSuccessAction } from "./action";
-import { AddTodoAction, TodoActionTypes } from "./types";
+import { getPaymentsFailureAction, getPaymentsSuccessAction } from "./action";
+import { GetPaymentsAction, SettlementsActionTypes } from "./types";
+
 import { payments } from "./__test__/testData";
 
-export function* handleFetch(action: AddTodoAction) {
+export function* handleFetch(action: GetPaymentsAction) {
   const response: Array<Payment> = payments;
   if (response) {
-    yield put(addTodoSuccessAction(response));
+    yield put(getPaymentsSuccessAction(response));
   } else {
-    yield put(addTodoFailureAction());
+    yield put(getPaymentsFailureAction());
   }
 }
 
-export function* watchTodo() {
-  yield takeEvery(TodoActionTypes.AddTodo, handleFetch);
+export function* watchSettlements() {
+  yield takeEvery(SettlementsActionTypes.GetPayments, handleFetch);
 }

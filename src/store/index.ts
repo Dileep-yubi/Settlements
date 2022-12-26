@@ -3,7 +3,7 @@ import { createStore, applyMiddleware } from "redux";
 import rootReducer from "./reducers";
 import { composeWithDevTools } from "redux-devtools-extension";
 import createSagaMiddleware from "redux-saga";
-import { watchTodo } from "./todo/sagas";
+import { watchSettlements } from "./todo/sagas";
 
 export const initialState = {
   todoState,
@@ -16,5 +16,5 @@ export const store = createStore(
   composeWithDevTools(applyMiddleware(sagaMiddleware))
 );
 
-sagaMiddleware.run(watchTodo);
+sagaMiddleware.run(watchSettlements);
 export type AppState = ReturnType<typeof rootReducer>;

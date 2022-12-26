@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { AppState } from "../../store";
-import { addTodoAction } from "../../store/todo/action";
+import { getPaymentsAction } from "../../store/todo/action";
 import { PaymentSummary } from "./PaymentSummary.component";
 import { DispatchProps, StateProps } from "./types";
 
@@ -10,7 +10,7 @@ const mapStateToProps = ({ todoState }: AppState): StateProps => ({
 });
 
 const mapDispatchToProps: DispatchProps = {
-  addTodoAction,
+  getPaymentsAction,
 };
 export default connect<StateProps, DispatchProps, any, any>(
   mapStateToProps,

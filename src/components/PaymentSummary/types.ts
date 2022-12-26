@@ -1,4 +1,4 @@
-import { addTodoAction } from "../../store/todo/action";
+import { getPaymentsAction } from "../../store/todo/action";
 
 export type StateProps = {
   bankName: string;
@@ -6,7 +6,7 @@ export type StateProps = {
 };
 
 export type DispatchProps = {
-  addTodoAction: typeof addTodoAction;
+  getPaymentsAction: typeof getPaymentsAction;
 };
 
 export type PaymentSummaryProps = StateProps & DispatchProps;

@@ -1,22 +1,22 @@
 import { put, takeEvery } from "redux-saga/effects";
-import { addTodoSuccessAction } from "../action";
-import { handleFetch, watchTodo } from "../sagas";
-import { AddTodoAction, TodoActionTypes } from "../types";
+import { getPaymentsSuccessAction } from "../action";
+import { handleFetch, watchSettlements } from "../sagas";
+import { GetPaymentsAction, SettlementsActionTypes } from "../types";
 import { payments } from "./testData";
 
 describe("sagas", () => {
   it("should listen all the actions", () => {
-    const gen = watchTodo();
+    const gen = watchSettlements();
     expect(gen.next().value).toEqual(
-      takeEvery(TodoActionTypes.AddTodo, handleFetch)
+      takeEvery(SettlementsActionTypes.GetPayments, handleFetch)
     );
   });
 
-  it("should listen to ADD_TODO", () => {
-    const action: AddTodoAction = {
-      type: TodoActionTypes.AddTodo,
+  it("should listen to GET_PAYMENTS", () => {
+    const action: GetPaymentsAction = {
+      type: SettlementsActionTypes.GetPayments,
     };
     const gen = handleFetch(action);
-    expect(gen.next().value).toEqual(put(addTodoSuccessAction(payments)));
+    expect(gen.next().value).toEqual(put(getPaymentsSuccessAction(payments)));
   });
 });

@@ -19,7 +19,7 @@ import { Modal } from "antd";
 import { CONVERT_OUTSTANDING, REVISED_EMI } from "../constants/displayMessages";
 
 export const PaymentSummary: React.FC<PaymentSummaryProps> = ({
-  addTodoAction,
+  getPaymentsAction,
   bankName,
   isLoading,
 }) => {
@@ -33,8 +33,8 @@ export const PaymentSummary: React.FC<PaymentSummaryProps> = ({
     setIsModalOpen(!isModalOpen);
   };
   useEffect(() => {
-    addTodoAction();
-  }, [addTodoAction]);
+    getPaymentsAction();
+  }, [getPaymentsAction]);
 
   if (isLoading) {
     return <Spin />;

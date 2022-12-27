@@ -1,5 +1,6 @@
 {
-  "name": "my-app",
+  "name": "settlements",
+  "homepage": "https://dileep-yubi.github.io/Emi-Screen",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -18,6 +19,7 @@
     "@yubi/yb-core-checkbox": "^1.0.5",
     "@yubi/yb-style-provider": "^2.0.2",
     "antd": "^5.1.0",
+    "gh-pages": "^4.0.0",
     "immer": "^9.0.16",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -37,7 +39,9 @@
     "build": "react-scripts build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",
-    "coverage": "npm test -- --coverage --watchAll --collectCoverageFrom='src/**/*.{ts,tsx}' --collectCoverageFrom='!src/**/*.{constants}.{js}'"
+    "coverage": "npm test -- --coverage --watchAll --collectCoverageFrom='src/**/*.{ts,tsx}' --collectCoverageFrom='!src/**/*.{constants}.{js}'",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

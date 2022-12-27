@@ -1,5 +1,4 @@
 import { H1 } from "./StyledComponents";
-import Summary from "./Summary";
 
 export interface EmiHeaderProps {
   title?: string;

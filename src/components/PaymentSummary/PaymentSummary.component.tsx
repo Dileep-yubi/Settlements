@@ -1,23 +1,17 @@
 import { useEffect, useState } from "react";
 import BreakDownCard from "../BreakDownCard";
 import { Spin } from "antd";
-import CAButton from "@yubi/yb-core-button";
 import { useStyles } from "@yubi/yb-style-provider";
 
 import {
-  BankTitle,
   Container,
-  EMITitle,
-  PaymentDetailCard,
   ReviewTitle,
   Revised,
   Title,
-  TitleContainer,
 } from "./PaymentSummary.styled";
 import { PaymentSummaryProps } from "./types";
 import { Modal } from "antd";
 import {
-  CONVERT_OUTSTANDING,
   EMI_BALANCE_APPLICATION,
   REVISED_EMI,
 } from "../constants/displayMessages";
@@ -29,10 +23,6 @@ export const PaymentSummary: React.FC<PaymentSummaryProps> = ({
   plan,
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const credit = {
-    width: "80%",
-  };
-  const { styleConnector } = useStyles();
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);

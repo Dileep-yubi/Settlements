@@ -1,6 +1,9 @@
+import { EmiHeader } from "components/EmiHeader";
+import {
+  EMIPlanComponent,
+  Plan,
+} from "components/EmiPlanComponent/EmiPlanComponent";
 import { useEffect, useState } from "react";
-import { EmiHeader } from "../EmiHeader";
-import { EMIPlanComponent, Plan } from "../EmiPlanComponent/EmiPlanComponent";
 import "./EmiListComponent.css";
 
 interface EmiListComponentProps {

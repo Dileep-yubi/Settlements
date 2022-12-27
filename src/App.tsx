@@ -1,14 +1,13 @@
 import PaymentSummary from "components/PaymentSummary";
-import GlobalStyle from "./GlobalStyles";
 import React, { useState } from "react";
 import "./App.css";
-import { EmiListComponent } from "./components/EmiListComponent/EmiListComponent";
-import { FooterComponent } from "./components/FooterComponent";
-import { Header } from "./components/Header/Header";
 import { PaymentDetailCard } from "components/PaymentSummary/PaymentSummary.styled";
-import "./components/EmiListComponent/EmiListComponent.css";
 import { headerComponent } from "testData";
 import RequestDone from "components/RequestDone.component";
+import { EmiListComponent } from "components/EmiListComponent/EmiListComponent";
+import GlobalStyle from "GlobalStyles";
+import { Header } from "components/Header/Header";
+import { FooterComponent } from "components/FooterComponent";
 const App = () => {
   const [selected, setSelected] = useState<number>(0);
   const [currentStep, setCurrentStep] = useState<number>(0);

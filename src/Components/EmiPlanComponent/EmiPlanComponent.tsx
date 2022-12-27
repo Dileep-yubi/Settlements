@@ -1,5 +1,5 @@
+import { EMIComponent } from "components/EmiComponent/EmiComponent";
 import "./EmiPlanComponent.css";
-import { EMIComponent } from "../EmiComponent/EmiComponent";
 
 interface EMIPlanComponentProps {
   selected: number;

@@ -6,8 +6,9 @@ describe("BreakDown", () => {
     render(
       <BreakDown
         summary={[
-          { title: "EMI", value: "100", currency: "USD" },
-          { title: "Interest", value: "1", currency: "USD" },
+          { title: "EMI", value: 100, currency: "USD" },
+          { title: "Interest", value: 1, currency: "USD" },
+          
         ]}
       />
     );

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { ButtonProps, FlexDivProps } from "./types";
 
 export const H1 = styled.h1`
-  font-size: 18px;
+  font-size: 1.2rem;
   text-align: center;
   margin: 0px;
   font-weight: 600;
@@ -10,8 +10,8 @@ export const H1 = styled.h1`
 
 export const Divider = styled.div`
   width: 100%;
-  height: 1px;
-  border-top: 1px solid #d6d3d3;
+  height: 0.1rem;
+  border-top: 0.1rem solid #d6d3d3;
 `;
 
 export const FlexDiv = styled.div`
@@ -21,21 +21,21 @@ export const FlexDiv = styled.div`
   justify-content: ${(props: FlexDivProps) =>
     props.justifyContent || "space-between"};
   align-items: ${(props: FlexDivProps) => props.alignItems || "center"};
-  gap: 5px;
-  line-height: 26px;
+  gap: 0.5rem;
+  line-height: 2.5rem;
 `;
 
 export const Footer = styled.footer`
-  bottom: 0px;
-  padding: 10px;
+  padding: 1rem;
   box-sizing: border-box;
   background: #fff;
-  width: inherit;
+  width: 100%;
+  margin-bottom: 1.5rem;
 `;
 
 export const StyledButton = styled.button`
-  font-size: 16px;
-  padding: 12px 40px;
+  font-size: 1rem;
+  padding: 0.8rem 3.6rem;
   border: 1px solid
     ${(props: ButtonProps) => (props.disabled ? "white" : "#633ea5")};
   border-radius: 12px;
@@ -44,7 +44,4 @@ export const StyledButton = styled.button`
     props.primary ? (props.disabled ? "#7f7c7c" : "white") : "#633ea5"};
   background: ${(props: ButtonProps) =>
     props.primary ? (props.disabled ? "#efefef" : "#633ea5") : "#fff"};
-  :hover {
-    cursor: ${(props: ButtonProps) => (props.disabled ? "not-allowed" : "")};
-  }
 `;

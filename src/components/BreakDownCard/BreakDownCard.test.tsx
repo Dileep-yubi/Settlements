@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 import { payments } from "../../store/settlements/__test__/testData";
 import BreakDownCard from "./";
 import reduxMockStore from "redux-mock-store";
+import { headerComponent } from "testData";
 
 describe("BreakDownCard", () => {
   const mockStore = reduxMockStore(),
@@ -12,7 +13,7 @@ describe("BreakDownCard", () => {
   const renderComponent = () =>
     render(
       <Provider store={store}>
-        <BreakDownCard />{" "}
+        <BreakDownCard plan={payments} header={headerComponent[0].header} />
       </Provider>
     );
   it("snapshot", () => {

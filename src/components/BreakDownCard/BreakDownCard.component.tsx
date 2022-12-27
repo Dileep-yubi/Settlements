@@ -1,3 +1,4 @@
+import { EmiPlanHeader } from "components/EmiComponent/EmiPlanHeader";
 import styled from "styled-components";
 import BreakDown from "../BreakDown/BreakDown.component";
 import "./BreakDownCard.css";
@@ -8,11 +9,16 @@ export const Divider = styled.div`
   border-top: 1px solid #d6d3d3;
 `;
 
-export const BreakDownCard: React.FC<BreakDownCardProps> = ({ payments }) => {
+export const BreakDownCard: React.FC<BreakDownCardProps> = ({
+  payments,
+  plan,
+  header,
+}) => {
   return (
     <div className="emiComponent emiComponentSelected">
       <div style={{ padding: "15px 15px 0px 15px", gap: "3em" }}>
-        <BreakDown summary={payments} />
+        <EmiPlanHeader title={header} isSelected={false} />
+        <BreakDown summary={plan} />
       </div>
     </div>
   );

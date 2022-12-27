@@ -1,20 +1,20 @@
 import React from "react";
+import { PlanSummary } from "./EmiPlanComponent/EmiPlanComponent";
 import { Divider } from "./StyledComponents";
 import Summary from "./Summary";
 
 export interface BreakDownProps {
-  summary: any;
-  isRadio: boolean;
+  summary: Array<PlanSummary>;
   divider?: boolean;
 }
 
 export const BreakDown = (props: BreakDownProps) => {
   return (
     <>
-      {props.summary.map((e: any, i: number) => {
+      {props.summary.map((summery: PlanSummary, i: number) => {
         return (
           <div key={i} style={{ fontSize: "14px", fontWeight: "normal" }}>
-            <Summary isRadio={props.isRadio} title={e.title} value={e.value} />
+            <Summary summery={summery} />
             {props.divider && props.summary.length - 1 === i && <Divider />}
           </div>
         );

@@ -1,10 +1,10 @@
-import { Money } from "./Money";
 import { H1 } from "./StyledComponents";
 import Summary from "./Summary";
 
 export interface EmiHeaderProps {
-  title?: JSX.Element | string;
-  value?: JSX.Element | string;
+  title?: string;
+  currency: string;
+  value: number;
 }
 
 export const EmiHeader = (props: EmiHeaderProps) => {
@@ -12,7 +12,7 @@ export const EmiHeader = (props: EmiHeaderProps) => {
     <>
       <H1>Choose EMI plan</H1>
       <div style={{ padding: "20px" }}>
-        <Summary title={props.title} value={props.value} isRadio={false} />
+        {props.title} {props.value}
       </div>
     </>
   );

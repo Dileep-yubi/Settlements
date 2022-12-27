@@ -3,6 +3,7 @@ export const Container = styled.div`
   width: 100%;
   margin: auto;
   height: 100%;
+  padding: 1rem;
 `;
 
 export const TitleContainer = styled.div`
@@ -33,12 +34,13 @@ export const EMITitle = styled.div`
 
 export const PaymentDetailCard = styled.div`
   background: #fff;
-  height: 70%;
+  height: 100%;
   border-radius: 16px 16px 0 0;
-  padding: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  align-items: center;
+  justify-content: space-between;
+  color: #5b5555;
 `;
 
 export const Title = styled.div`

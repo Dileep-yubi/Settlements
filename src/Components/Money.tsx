@@ -4,18 +4,14 @@ import { FormattedNumber } from "react-intl";
 interface MoneyProps {
   amount: {
     currency: string;
-    value: number;
+    value?: number;
   };
 }
 
-export const Money = ({ amount }: MoneyProps) => {
-  if (!amount.currency || amount.value == null) {
-    return <></>;
-  }
+export const Money = ({ amount: { currency, value } }: MoneyProps) => {
   return (
-    <>
-      {amount.currency} {"  "}
-      <FormattedNumber value={amount.value} />
-    </>
+    <span style={{ fontWeight: "bolder" }}>
+      {currency} {value && <FormattedNumber value={value} />}
+    </span>
   );
 };

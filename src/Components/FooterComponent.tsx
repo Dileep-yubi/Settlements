@@ -16,9 +16,9 @@ export const FooterComponent = ({
 }: FooterComponentProps) => {
   return (
     <Footer>
-      <FlexDiv>
-        <StyledButton onClick={() => onPrev?.()} disabled={isBackDisabled}>
-          Not Now
+      <FlexDiv justifyContent="space-around">
+        <StyledButton onClick={() => onPrev?.()}>
+          {isBackDisabled ? "Back" : "Not Now"}
         </StyledButton>
         <StyledButton
           onClick={() => onNext?.()}

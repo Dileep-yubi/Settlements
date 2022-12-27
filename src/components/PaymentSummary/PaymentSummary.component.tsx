@@ -26,6 +26,7 @@ export const PaymentSummary: React.FC<PaymentSummaryProps> = ({
   getPaymentsAction,
   bankName,
   isLoading,
+  plan,
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const credit = {
@@ -44,53 +45,26 @@ export const PaymentSummary: React.FC<PaymentSummaryProps> = ({
     return <Spin />;
   }
 
+  console.log({ plan });
   return (
     <Container>
-      {/* <TitleContainer>
-        <BankTitle>{bankName}</BankTitle>
-        <div style={{ width: "100%", display: "flex" }}>
-          <div style={{ width: "50%" }}>
-            <img style={credit} src="/credit.jpeg" alt="credit" />
-          </div>
-          <div
-            style={{ width: "50%", display: "flex", alignItems: "flex-start" }}
-          >
-            <EMITitle>{CONVERT_OUTSTANDING}</EMITitle>
-          </div>
-        </div>
-      </TitleContainer> */}
+      <Title>Summary</Title>
+      <ReviewTitle> Please review the selection made</ReviewTitle>
 
-      <PaymentDetailCard>
-        <Title>Summary</Title>
-        <ReviewTitle> Please review the selection made</ReviewTitle>
+      <BreakDownCard
+        header={plan.header}
+        plan={[
+          ...plan.children,
+          { title: "R.I", interest: plan.header.interest },
+          {
+            title: "EMI",
+            value: plan.header.value,
+            currency: plan.header.currency,
+          },
+        ]}
+      />
+      <Revised onClick={toggleModal}>{REVISED_EMI}</Revised>
 
-        <BreakDownCard />
-        <Revised onClick={toggleModal}>{REVISED_EMI}</Revised>
-        {/* <div
-          style={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "space-between",
-          }}
-        >
-          <CAButton
-            title="Back"
-            size={"s"}
-            type={"success"}
-            styleConnector={styleConnector}
-            width="35%"
-            onClick={toggleModal}
-          />
-          <CAButton
-            title="Submit"
-            size={"s"}
-            type={"success"}
-            styleConnector={styleConnector}
-            width="35%"
-            onClick={toggleModal}
-          />
-        </div> */}
-      </PaymentDetailCard>
       <Modal
         title={bankName}
         open={isModalOpen}

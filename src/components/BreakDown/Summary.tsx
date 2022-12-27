@@ -11,19 +11,21 @@ export const FlexDiv = styled.div`
   width: 100%;
   display: flex;
   flex-direction: "row";
-  justify-content: "space-between";
-  align-items: "center";
   gap: 5px;
   line-height: 26px;
   padding: 15px;
   color: black;
 `;
 
-const Summary: React.FC<Payment> = ({ title, value, currency }: Payment) => {
+const Summary: React.FC<{ summary: Payment }> = ({
+  summary: { title, value, currency, interest, period },
+}) => {
   return (
-    <FlexDiv>
-      <span>{title}</span>
-      <span>{`${currency || ""} ${value}`}</span>
+    <FlexDiv style={{ display: "flex", justifyContent: "space-between" }}>
+      {title && <span>{title}</span>}
+      {interest && <span>{interest}</span>}
+      {period && <span>{period}</span>}
+      {value && <span>{`${currency || ""} ${value}`}</span>}
     </FlexDiv>
   );
 };

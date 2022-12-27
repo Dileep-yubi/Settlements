@@ -1,20 +1,24 @@
 import React from "react";
+import { PlanSummary } from "./EmiPlanComponent/EmiPlanComponent";
+import { Money } from "./Money";
 import { FlexDiv } from "./StyledComponents";
 
 interface SummaryProps {
-  isRadio: boolean;
-  title?: JSX.Element | string;
-  value?: JSX.Element | string;
+  summery: PlanSummary;
 }
 
-const Summary = (props: SummaryProps) => {
+const Summary = ({
+  summery: { title, value, currency, period },
+}: SummaryProps) => {
   return (
     <FlexDiv
       flexDirection="row"
-      justifyContent={`${props.isRadio ? "space-between" : "center"}`}
-      alignItems="center">
-      <span>{props.title}</span>
-      <span>{props.value}</span>
+      justifyContent="space-between"
+      alignItems="center"
+    >
+      <span>{title}</span>
+      {period && <span style={{ fontWeight: "bolder" }}>{period}</span>}
+      {value && <Money amount={{ currency: currency || "", value: value }} />}
     </FlexDiv>
   );
 };

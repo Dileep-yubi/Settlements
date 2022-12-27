@@ -1,36 +1,39 @@
 import { useEffect, useState } from "react";
 import { EmiHeader } from "../EmiHeader";
-import { EMIPlanComponent } from "../EmiPlanComponent/EmiPlanComponent";
-import { Money } from "../Money";
+import { EMIPlanComponent, Plan } from "../EmiPlanComponent/EmiPlanComponent";
 import "./EmiListComponent.css";
 
 interface EmiListComponentProps {
   selectedEmi: number;
   handleSelected: (index: number) => void;
+  headerComponent: Array<Plan>;
 }
 
-export const EmiListComponent = (props: EmiListComponentProps) => {
-  const [selected, setSelected] = useState<number>(props.selectedEmi);
+export const EmiListComponent = ({
+  selectedEmi,
+  handleSelected,
+  headerComponent,
+}: EmiListComponentProps) => {
+  const [selected, setSelected] = useState<number>(selectedEmi);
 
   useEffect(() => {
     if (selected) {
-      props.handleSelected(selected);
+      handleSelected(selected);
     }
-  }, [props, selected]);
-
-  const value = (
-    <span style={{ fontWeight: "bolder" }}>
-      <Money amount={{ currency: "USD", value: 10000 }} />
-    </span>
-  );
+  }, [handleSelected, selected]);
 
   return (
-    <div className="emiContentContainer">
-      <EmiHeader title="Total outstanding amount" value={value} />
+    <div style={{ padding: "1rem" }}>
+      <EmiHeader
+        title="Total outstanding amount"
+        currency="USD"
+        value={10000}
+      />
       <div className="flex-container">
         <EMIPlanComponent
           selected={selected}
           handleSelected={(index) => setSelected(index + 1)}
+          headerComponent={headerComponent}
         />
       </div>
     </div>

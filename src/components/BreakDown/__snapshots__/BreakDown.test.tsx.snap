@@ -6,13 +6,14 @@ exports[`BreakDown snapshot 1`] = `
     style="font-size: 14px; font-weight: normal;"
   >
     <div
-      class="sc-gswNZR pwObR"
+      class="sc-gKPRtg bwjmsQ"
+      style="display: flex; justify-content: space-between;"
     >
       <span>
         EMI
       </span>
       <span>
-        USD  100
+        USD 100
       </span>
     </div>
   </div>
@@ -20,17 +21,18 @@ exports[`BreakDown snapshot 1`] = `
     style="font-size: 14px; font-weight: normal;"
   >
     <div
-      class="sc-bcXHqe iXsvJl"
+      class="sc-jSUZER knUjQB"
       data-testid="divider"
     />
     <div
-      class="sc-gswNZR pwObR"
+      class="sc-gKPRtg bwjmsQ"
+      style="display: flex; justify-content: space-between;"
     >
       <span>
         Interest
       </span>
       <span>
-        USD  1
+        USD 1
       </span>
     </div>
   </div>

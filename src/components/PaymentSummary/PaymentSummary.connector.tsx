@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import { AppState } from "../../store";
 import { getPaymentsAction } from "../../store/settlements/action";
 import { PaymentSummary } from "./PaymentSummary.component";
-import { DispatchProps, StateProps } from "./types";
+import { DispatchProps, OwnProps, StateProps } from "./types";
 
 const mapStateToProps = ({ todoState }: AppState): StateProps => ({
   bankName: todoState.bankName,
@@ -12,7 +12,8 @@ const mapStateToProps = ({ todoState }: AppState): StateProps => ({
 const mapDispatchToProps: DispatchProps = {
   getPaymentsAction,
 };
-export default connect<StateProps, DispatchProps, any, any>(
+
+export default connect<StateProps, DispatchProps, OwnProps, any>(
   mapStateToProps,
   mapDispatchToProps
 )(PaymentSummary);

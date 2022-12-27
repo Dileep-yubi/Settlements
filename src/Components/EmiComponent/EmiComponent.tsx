@@ -1,12 +1,12 @@
 import "./EMIComponent.css";
-import { EmiPlanElement } from "../types";
 import { BreakDown } from "../BreakDown";
 import { Divider } from "../StyledComponents";
+import { EmiPlanHeader } from "./EmiPlanHeader";
+import { Plan } from "components/EmiPlanComponent/EmiPlanComponent";
 
 export interface EMIComponentProps {
-  isSelected?: boolean;
-  isRadio: boolean;
-  element: EmiPlanElement;
+  isSelected: boolean;
+  element: Plan;
 }
 
 export const EMIComponent = (props: EMIComponentProps) => {
@@ -15,20 +15,13 @@ export const EMIComponent = (props: EMIComponentProps) => {
     <div className={`emiComponent ${isSelected ? "emiComponentSelected" : ""}`}>
       <div>
         <div style={{ padding: "6px" }}>
-          <BreakDown
-            isRadio={props.isRadio || false}
-            summary={[element.header]}
-          />
+          <EmiPlanHeader isSelected={isSelected} title={element.header} />
         </div>
         {isSelected && (
           <>
-            {" "}
             <Divider />
             <div style={{ padding: "6px" }}>
-              <BreakDown
-                isRadio={props.isRadio || false}
-                summary={element.children}
-              />
+              <BreakDown summary={element.children} />
             </div>
           </>
         )}

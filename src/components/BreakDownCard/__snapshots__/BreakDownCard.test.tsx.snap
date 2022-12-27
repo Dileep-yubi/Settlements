@@ -9,16 +9,24 @@ exports[`BreakDownCard snapshot 1`] = `
       style="padding: 15px 15px 0px 15px; gap: 3em;"
     >
       <div
+        class="sc-dkrFOg iMlCA-d"
+      >
+        <span>
+          USD 3339 for 3 months @1% p.a
+        </span>
+      </div>
+      <div
         style="font-size: 14px; font-weight: normal;"
       >
         <div
-          class="sc-bcXHqe rRVsh"
+          class="sc-jSUZER dGOTlI"
+          style="display: flex; justify-content: space-between;"
         >
           <span>
             Tenure
           </span>
           <span>
-            undefined  9 months
+            9 months
           </span>
         </div>
       </div>
@@ -26,17 +34,18 @@ exports[`BreakDownCard snapshot 1`] = `
         style="font-size: 14px; font-weight: normal;"
       >
         <div
-          class="sc-gswNZR bUnCSh"
+          class="sc-gKPRtg hKTseF"
           data-testid="divider"
         />
         <div
-          class="sc-bcXHqe rRVsh"
+          class="sc-jSUZER dGOTlI"
+          style="display: flex; justify-content: space-between;"
         >
           <span>
             EMI
           </span>
           <span>
-            USD  3339
+            USD 3339
           </span>
         </div>
       </div>
@@ -44,17 +53,18 @@ exports[`BreakDownCard snapshot 1`] = `
         style="font-size: 14px; font-weight: normal;"
       >
         <div
-          class="sc-gswNZR bUnCSh"
+          class="sc-gKPRtg hKTseF"
           data-testid="divider"
         />
         <div
-          class="sc-bcXHqe rRVsh"
+          class="sc-jSUZER dGOTlI"
+          style="display: flex; justify-content: space-between;"
         >
           <span>
             R.O.I
           </span>
           <span>
-            undefined  1%
+            1%
           </span>
         </div>
       </div>
@@ -62,17 +72,18 @@ exports[`BreakDownCard snapshot 1`] = `
         style="font-size: 14px; font-weight: normal;"
       >
         <div
-          class="sc-gswNZR bUnCSh"
+          class="sc-gKPRtg hKTseF"
           data-testid="divider"
         />
         <div
-          class="sc-bcXHqe rRVsh"
+          class="sc-jSUZER dGOTlI"
+          style="display: flex; justify-content: space-between;"
         >
           <span>
             Interest
           </span>
           <span>
-            USD  150
+            USD 150
           </span>
         </div>
       </div>
@@ -80,22 +91,22 @@ exports[`BreakDownCard snapshot 1`] = `
         style="font-size: 14px; font-weight: normal;"
       >
         <div
-          class="sc-gswNZR bUnCSh"
+          class="sc-gKPRtg hKTseF"
           data-testid="divider"
         />
         <div
-          class="sc-bcXHqe rRVsh"
+          class="sc-jSUZER dGOTlI"
+          style="display: flex; justify-content: space-between;"
         >
           <span>
             Total amount payable
           </span>
           <span>
-            USD  1000
+            USD 1000
           </span>
         </div>
       </div>
     </div>
   </div>
-   
 </div>
 `;

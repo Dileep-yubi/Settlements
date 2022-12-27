@@ -4,7 +4,7 @@ export interface EmiPlanElement {
 }
 
 export interface EmiElement {
-  title?: JSX.Element | string;
+  title?: string;
   value?: JSX.Element | string;
 }
 

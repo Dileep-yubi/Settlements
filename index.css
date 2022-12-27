@@ -1,0 +1,20 @@
+html {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: #e8e8e8;
+  min-width: 300px;
+}
+
+body,
+#root {
+  width: 100%;
+  max-width: 600px;
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  min-height: 100%;
+  font-family: "Inter", "Sofia Pro";
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

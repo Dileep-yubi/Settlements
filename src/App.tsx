@@ -46,7 +46,7 @@ const App = () => {
             onNext={() => setCurrentStep((prev: number) => prev + 1)}
             onPrev={() => setCurrentStep((prev: number) => prev - 1)}
             isNextDisabled={!selected}
-            isBackDisabled={currentStep === 1}
+            isBackDisabled={currentStep === 0}
           />
         )}
       </PaymentDetailCard>

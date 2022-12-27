@@ -35,7 +35,6 @@ export const PaymentSummary: React.FC<PaymentSummaryProps> = ({
     return <Spin />;
   }
 
-  console.log({ plan });
   return (
     <Container>
       <Title>Summary</Title>

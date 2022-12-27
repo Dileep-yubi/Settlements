@@ -18,16 +18,13 @@ export const todoState: Reducer<SettlementsInitialState, SettlementsActions> =
       draftState: Draft<SettlementsInitialState>,
       action: SettlementsActions
     ) => {
-      console.log("todoState");
       switch (action.type) {
         case SettlementsActionTypes.GetPayments: {
-          console.log("AddTodo reducer");
           draftState.isLoading = true;
           break;
         }
 
         case SettlementsActionTypes.GetPaymentsSuccess: {
-          console.log("AddTodoSuccess reducer");
           draftState.isLoading = false;
           draftState.payments = action.payload.payments;
           break;

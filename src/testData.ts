@@ -11,7 +11,7 @@ export const headerComponent: Array<Plan> = [
     children: [
       {
         title: "Tenure",
-        period: "3 months",
+        period: "4 months",
       },
       {
         title: "Interest",

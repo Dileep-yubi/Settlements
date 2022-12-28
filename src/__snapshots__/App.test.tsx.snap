@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App/> should match the snapshot 1`] = `
+<div>
+  <div
+    class="rootContainer"
+  >
+    <header
+      class="headerContainer"
+    >
+      <h1
+        class="sc-bcXHqe bFDxfp"
+      >
+        SMARTBank
+      </h1>
+      <div
+        class="sc-dkrFOg iMlCA-d"
+      >
+        <img
+          alt="Fallback"
+          height="150px"
+          src="https://cardinsider.com/wp-content/uploads/2021/10/slider.png.webp"
+          width="50%"
+        />
+        <div>
+          Convert your outstanding amount into EMIs with ease!
+        </div>
+      </div>
+    </header>
+    <div
+      class="sc-kDvujY hiVRov"
+    >
+      <div
+        style="padding: 1rem;"
+      >
+        <h1
+          class="sc-bcXHqe bFDxfp"
+        >
+          Choose EMI plan
+        </h1>
+        <div
+          style="padding: 20px;"
+        >
+          Total outstanding amount
+           
+          10000
+        </div>
+        <div
+          class="flex-container"
+        >
+          <div
+            class="emiPlanWrapper"
+          >
+            <div
+              class="emiComponent "
+            >
+              <div>
+                <div
+                  style="padding: 6px;"
+                >
+                  <div
+                    class="sc-dkrFOg iMlCA-d"
+                  >
+                    <span>
+                      USD 3339 for 3 months @1% p.a
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="emiPlanWrapper"
+          >
+            <div
+              class="emiComponent "
+            >
+              <div>
+                <div
+                  style="padding: 6px;"
+                >
+                  <div
+                    class="sc-dkrFOg iMlCA-d"
+                  >
+                    <span>
+                      USD 1839 for 6 months @1.5% p.a
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="emiPlanWrapper"
+          >
+            <div
+              class="emiComponent "
+            >
+              <div>
+                <div
+                  style="padding: 6px;"
+                >
+                  <div
+                    class="sc-dkrFOg iMlCA-d"
+                  >
+                    <span>
+                      USD 1277 for 9 months @2% p.a
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer
+        class="sc-hLBbgP bkuKRn"
+      >
+        <div
+          class="sc-dkrFOg iLEIro"
+        >
+          <button
+            class="sc-eDvSVe hAbUIn"
+            disabled=""
+          >
+            Not Now
+          </button>
+          <button
+            class="sc-eDvSVe hDKcWg"
+            disabled=""
+          >
+            Submit
+          </button>
+        </div>
+      </footer>
+    </div>
+  </div>
+</div>
+`;
